@@ -1,4 +1,4 @@
-#POC for Jenkins Shared Library.
+# POC for Jenkins Shared Library
 
 Actions Performed: 
 - Import code from SCM

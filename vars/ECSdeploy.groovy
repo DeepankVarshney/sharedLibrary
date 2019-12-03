@@ -27,6 +27,7 @@ def call(Map params) {
                     parallel (
                          "unit tests": { sh 'mvn test' },
                          "integration tests": { sh 'mvn integration-test' }
+                    )
                 }
             }
 
@@ -57,4 +58,3 @@ def call(Map params) {
         }
     }
 }
-    

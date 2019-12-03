@@ -5,7 +5,7 @@ def call(Map params) {
 
         tools {
             maven "maven_3.6"
-            docker "docker"
+            //docker "docker"
         }
 
         stages {

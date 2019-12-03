@@ -12,7 +12,7 @@ def call(Map params) {
 
             stage ('Git checkout') {
                 steps {
-                    git branch: params.branch, url: params.url
+                    git branch: params.branch, url: params.Url
                 }
             }
 

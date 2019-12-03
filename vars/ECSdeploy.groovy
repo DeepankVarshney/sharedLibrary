@@ -40,7 +40,7 @@ def call(Map params) {
             stage('Create Docker image') {
                 steps {
                     // sh 'docker build -f nginx.Dockerfile -t nginx .'
-                    docker.build(params.imageName)
+                    sh 'docker.build(params.imageName)'
                 }
             }
 

@@ -5,7 +5,6 @@ def call(Map params) {
 
         tools {
             maven "maven_3.6"
-            org.jenkinsci.plugins.docker.commons.tools.DockerTool "docker"
         }
 
         stages {

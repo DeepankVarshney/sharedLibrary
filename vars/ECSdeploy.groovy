@@ -40,7 +40,7 @@ def call(Map params) {
                 steps {
                     // sh 'docker build -f nginx.Dockerfile -t nginx .'
                     script {
-                        docker.build(params.imageName, "/var/lib/jenkins/workspace/test@libs/sharedLibrary")
+                        sudo docker.build(params.imageName, "/var/lib/jenkins/workspace/test@libs/sharedLibrary")
                     }
                 }
             }

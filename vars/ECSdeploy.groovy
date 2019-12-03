@@ -33,7 +33,7 @@ def call(Map params) {
 
             stage ('Upload artifact to s3') {
                 steps {
-                    sh 'aws s3 cp /var/lib/jenkins/workspace/ecs-deploy/target/*.war s3://jenkins-artifact-war'
+                    sh 'aws s3 cp /var/lib/jenkins/workspace/test/target/*.war s3://jenkins-artifact-war'
                 }
             }
 

@@ -46,9 +46,9 @@ def call(Map params) {
 
             stage('Push Docker image to ECR') {
                 steps {
-                    docker.withRegistry('159714198409.dkr.ecr.us-east-1.amazonaws.com/nginx-test') {
+                    sh 'docker.withRegistry('159714198409.dkr.ecr.us-east-1.amazonaws.com/nginx-test') {
                         docker.image(params.imageName).push('latest')
-                    }
+                    }'
                 }
             }
 

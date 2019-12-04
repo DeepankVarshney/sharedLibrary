@@ -38,7 +38,8 @@ def call(Map params) {
 
             stage('Create Docker image') {
                 steps {
-                    script {WORKSPACE@libs/sharedLibrary")
+                    script {
+                        dockerImage = docker.build(params.imagename, "${WORKSPACE}@libs/sharedLibrary")
                     }
                 }
             }

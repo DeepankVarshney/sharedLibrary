@@ -38,8 +38,7 @@ def call(Map params) {
 
             stage('Create Docker image') {
                 steps {
-                    script {
-                        dockerImage = docker.build(params.imagename, "/var/lib/jenkins/workspace/test@libs/sharedLibrary")
+                    script {WORKSPACE@libs/sharedLibrary")
                     }
                 }
             }

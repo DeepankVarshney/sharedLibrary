@@ -47,8 +47,8 @@ def call(Map params) {
             stage('Push Docker image to ECR') {
                 steps {
                     script {
-                        sh 'aws ecr get-login --no-include-email --region us-east-1'
-                        docker.withRegistry(ecrUrl) { dockerImage.push('latest')
+                        ecrCred = sh 'aws ecr get-login --no-include-email --region us-east-1'
+                        docker.withRegistry(ecrUrl, ecrCred) { dockerImage.push('latest')
                         }
                     }
                 }

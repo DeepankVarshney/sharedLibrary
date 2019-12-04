@@ -7,6 +7,10 @@ def call(Map params) {
             maven "maven_3.6"
         }
 
+        environment {
+            dockerImage = ''
+        }
+
         stages {
 
             stage ('Git checkout') {
@@ -33,14 +37,14 @@ def call(Map params) {
             stage('Create Docker image') {
                 steps {
                     script {
-                        docker.build(params.imageName, "/var/lib/jenkins/workspace/test@libs/sharedLibrary")
+                        dockerImage = docker.build(params.imagename, "/var/lib/jenkins/workspace/test@libs/sharedLibrary")
                     }
                 }
             }
 
             stage('Push Docker image to ECR') {
                 steps {
-                    docker.withRegistry("159714198409.dkr.ecr.us-east-1.amazonaws.com/test") { docker.image(params.imageName).push("latest")
+                    docker.withRegistry("159714198409.dkr.ecr.us-east-1.amazonaws.com/test") { dockerImage.push('latest')
                     }
                 }
             }

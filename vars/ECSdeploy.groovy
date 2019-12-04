@@ -10,7 +10,7 @@ def call(Map params) {
         environment {
             dockerImage = ''
             ecrUrl = "https://159714198409.dkr.ecr.us-east-1.amazonaws.com/test"
-            ecrCred = $(aws ecr get-login --no-include-email --region us-east-1)
+            // ecrCred = $(aws ecr get-login --no-include-email --region us-east-1)
         }
 
         stages {
@@ -47,7 +47,8 @@ def call(Map params) {
             stage('Push Docker image to ECR') {
                 steps {
                     script {
-                        docker.withRegistry(ecrUrl, ecrCred) { dockerImage.push('latest')
+                        sh 'aws ecr get-login --no-include-email --region us-east-1'
+                        docker.withRegistry(ecrUrl) { dockerImage.push('latest')
                         }
                     }
                 }

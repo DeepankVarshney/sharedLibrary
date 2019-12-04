@@ -30,25 +30,18 @@ def call(Map params) {
                 }
             }
 
-            stage ('Upload artifact to s3') {
-                steps {
-                    sh 'aws s3 cp /var/lib/jenkins/workspace/test/target/*.war s3://jenkins-artifact-war'
-                }
-            }
-
             stage('Create Docker image') {
                 steps {
-                    // sh 'docker build -f nginx.Dockerfile -t nginx .'
                     script {
-                        sudo docker.build(params.imageName, "/var/lib/jenkins/workspace/test@libs/sharedLibrary")
+                        docker.build(params.imageName, "/var/lib/jenkins/workspace/test@libs/sharedLibrary")
                     }
                 }
             }
 
             stage('Push Docker image to ECR') {
                 steps {
-                    sh '''docker.withRegistry("159714198409.dkr.ecr.us-east-1.amazonaws.com/nginx-test") { docker.image(params.imageName).push("latest")
-                    }'''
+                    docker.withRegistry("159714198409.dkr.ecr.us-east-1.amazonaws.com/test") { docker.image(params.imageName).push("latest")
+                    }
                 }
             }
 

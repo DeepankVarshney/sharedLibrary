@@ -1,3 +1,5 @@
+import test
+
 def call(Map params) {
 
     pipeline {
@@ -14,6 +16,10 @@ def call(Map params) {
         }
 
         stages {
+
+            stage('testing fncs') {
+                test.func()
+            }
 
             stage ('Git checkout') {
                 steps {

@@ -2,6 +2,7 @@ import com.dk.Test
 
 def call(Map params) {
 
+    def Test = new Test()
     pipeline {
         agent any
         tools {
@@ -19,7 +20,6 @@ def call(Map params) {
             stage('testing fncs') {
                 steps {
                     script {
-                        def Test = new Test()
                         Test.fnu()
                     }
                 }

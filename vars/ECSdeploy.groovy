@@ -9,7 +9,6 @@ def call(Map params) {
         }
 
         environment {
-            def Test = new Test()
             dockerImage = ''
             ecrUrl = "https://159714198409.dkr.ecr.us-east-1.amazonaws.com/test"
             // ecrCred = $(aws ecr get-login --no-include-email --region us-east-1)

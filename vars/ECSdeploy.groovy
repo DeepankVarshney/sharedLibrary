@@ -21,7 +21,9 @@ def call(Map params) {
 
             stage('testing fncs') {
                 steps {
-                    Test.func()
+                    script {
+                        Test.func()
+                    }
                 }
             }
 

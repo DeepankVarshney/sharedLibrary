@@ -5,7 +5,9 @@ def call(Map params) {
     pipeline {
         agent any
 
-        def Test = new Test()
+        environment {
+            def Test = new Test()
+        }
 
         tools {
             maven "maven_3.6"

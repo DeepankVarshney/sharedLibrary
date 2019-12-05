@@ -1,4 +1,4 @@
-import com.dk
+import com.dk.Test
 
 def call(Map params) {
 
@@ -19,7 +19,7 @@ def call(Map params) {
             stage('testing fncs') {
                 steps {
                     script {
-                        Test.fnu()
+                        fnu()
                     }
                 }
             }

@@ -8,6 +8,7 @@ def call(Map params) {
             maven "maven_3.6"
         }
 
+        String a = ''
         environment {
             dockerImage = ''
             ecrUrl = "https://159714198409.dkr.ecr.us-east-1.amazonaws.com/test"

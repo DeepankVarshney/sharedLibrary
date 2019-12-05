@@ -1,4 +1,4 @@
-import test
+import com.dk.test
 
 def call(Map params) {
 

@@ -1,6 +1,9 @@
 package com.dk
 
 
-def fnu() {
-    println("sdnbjk")
+def call() {
+    def fnu() {
+        println("sdnbjk")
+    }
+
 }

@@ -1,6 +1,6 @@
 package com.dk
 
 
-def func() {
+def fnu() {
     println("sdnbjk")
 }

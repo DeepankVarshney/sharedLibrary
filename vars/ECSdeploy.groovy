@@ -19,7 +19,7 @@ def call(Map params) {
             stage('testing fncs') {
                 steps {
                     script {
-                        Test.func()
+                        Test.fnu()
                     }
                 }
             }

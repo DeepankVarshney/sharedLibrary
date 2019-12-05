@@ -19,7 +19,8 @@ def call(Map params) {
             stage('testing fncs') {
                 steps {
                     script {
-                        fnu()
+                        def Test = new Test()
+                        Test.fnu()
                     }
                 }
             }

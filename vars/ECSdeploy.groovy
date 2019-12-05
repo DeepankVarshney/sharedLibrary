@@ -1,5 +1,3 @@
-from com.dk import Test
-
 def call(Map params) {
 
     pipeline {

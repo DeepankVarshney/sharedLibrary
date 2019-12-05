@@ -1,11 +1,11 @@
-import com.dk.test
+import com.dk.Test
 
 def call(Map params) {
 
     pipeline {
         agent any
 
-        def test = new test()
+        def Test = new Test()
 
         tools {
             maven "maven_3.6"
@@ -21,7 +21,7 @@ def call(Map params) {
 
             stage('testing fncs') {
                 steps {
-                    test.func()
+                    Test.func()
                 }
             }
 

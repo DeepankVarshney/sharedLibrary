@@ -12,6 +12,16 @@ def call(Map params) {
             string defaultValue: 'master', description: '', name: 'GIT_BRANCH', trim: true
         }
 
+        stage('Input custom parameters') {
+            steps {
+                message "Please enter the following parameters."
+                parameters {
+                    string(name: 'GIT_BRANCH', defaultvalue: 'master')
+                }
+            }
+        }
+
+
         environment {
             dockerImage = ''
             ecrUrl = "https://159714198409.dkr.ecr.us-east-1.amazonaws.com/test"

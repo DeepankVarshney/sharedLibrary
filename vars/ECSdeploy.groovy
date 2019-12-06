@@ -22,8 +22,9 @@ def call(Map params) {
 
             stage('testing fncs') {
                 steps {
-                    script {
-                        Test.fnu()
+                        message "Please enter the following parameters."
+                        parameters {
+                            string(name: 'GIT_BRANCH', defaultvalue: 'master')
                     }
                 }
             }

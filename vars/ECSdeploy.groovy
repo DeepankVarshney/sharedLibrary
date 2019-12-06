@@ -8,6 +8,9 @@ def call(Map params) {
         tools {
             maven "maven_3.6"
         }
+        parameters {
+            string defaultValue: 'master', description: '', name: 'GIT_BRANCH', trim: true
+        }
 
         environment {
             dockerImage = ''

@@ -7,7 +7,7 @@ def call(Map params) {
         agent any
         tools {
             maven "maven_3.6"
-        }
+        } 
 
         environment {
             dockerImage = ''
